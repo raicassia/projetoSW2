@@ -31,10 +31,11 @@ USE `projetosw`;
 
 DROP TABLE IF EXISTS `administrador`;
 CREATE TABLE IF NOT EXISTS `administrador` (
-  `codigo` int NOT NULL,
+  `codigo` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `login` varchar(200) NOT NULL,
-  `senha` varchar(200) NOT NULL
+  `senha` varchar(200) NOT NULL,
+  PRIMARY KEY (`codigo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
