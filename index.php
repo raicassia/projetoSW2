@@ -83,8 +83,15 @@
                     realizadas pelos clientes
                 </p>
 
+                <div class="col-sm-6">
+                <h1 class="bg-primary">formas pagamentos</h1>
+                <p class="text-secondary">
+                    Ultilize esta opço para realizar as formas de pagamentos 
+                    
+                </p>
+
             
-                
+</div>
             </div>
 
     </div>
