@@ -20,7 +20,7 @@
             <div class="col-sm-8 mx-auto mt-3 border border-warning">
                 <h3 class="text-center p-3">Preencha os dados abaixo</h3>
 
-                <form action="#">
+                <form action="produto_cadastro.php">
                     <p>
                         Descrição:<br>
                         <input type="text" name="nome" class="form-control">
@@ -28,17 +28,17 @@
 
                     <p>
                         Preço de venda:<br>
-                        <input type="text" name="login" class="form-control">
+                        <input type="text" name="nome" class="form-control">
                     </p>
 
                     <p>
                         Categoria:<br>
-                        <input type="password" name="senha" class="form-control">
+                        <input type="password" name="nome" class="form-control">
                     </p>
 
                     <p>
                         Fornecedor:<br>
-                        <input type="password" name="senha" class="form-control">
+                        <input type="password" name="nome" class="form-control">
                     </p>
 
                     <p>

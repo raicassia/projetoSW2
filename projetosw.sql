@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Abr-2025 às 11:00
+-- Tempo de geração: 08-Abr-2025 às 13:51
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   `login` varchar(200) NOT NULL,
   `senha` varchar(200) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `administrador`
@@ -44,7 +44,9 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 
 INSERT INTO `administrador` (`codigo`, `nome`, `login`, `senha`) VALUES
 (1, 'ana', '', 'd41d8cd98f00b204e9800998ecf8427e'),
-(2, '', '', 'd41d8cd98f00b204e9800998ecf8427e');
+(2, '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
+(3, 'aaa', 'aa', '4124bc0a9335c27f086f24ba207a4912'),
+(4, '', '', 'd41d8cd98f00b204e9800998ecf8427e');
 
 -- --------------------------------------------------------
 
@@ -57,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `codigo` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -66,7 +68,9 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 INSERT INTO `categoria` (`codigo`, `nome`) VALUES
 (1, 'limpeza'),
 (2, 'FF'),
-(3, 'FF');
+(3, 'FF'),
+(4, 'y'),
+(5, 'credito');
 
 -- --------------------------------------------------------
 
@@ -92,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `fornecedor` (
   `codigo` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `fornecedor`
@@ -100,7 +104,8 @@ CREATE TABLE IF NOT EXISTS `fornecedor` (
 
 INSERT INTO `fornecedor` (`codigo`, `nome`) VALUES
 (1, 'limpeza'),
-(2, 'caururu');
+(2, 'caururu'),
+(3, 'aaa');
 
 -- --------------------------------------------------------
 

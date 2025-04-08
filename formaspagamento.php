@@ -12,7 +12,7 @@
 <body>
     
     <div class="bg-danger text-white p-3 text-center">
-        <h1>Categorias
+        <h1>Formas de Pagamento
         </h1>
     </div>
 
@@ -23,7 +23,7 @@
 
                 <form action="formaspagamento_cadastro.php">
                     <p>
-                        Digite o nome da Categoria<br>
+                        Digite a forma de pagamento<br>
                         <input type="text" name="nome" class="form-control">
                     </p>
 

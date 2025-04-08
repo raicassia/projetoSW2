@@ -90,7 +90,7 @@
                     
                 </p>
                 <p>
-                    <a href="formaspagmento.php" class="btn btn-warning">Clique</a>
+                    <a href="formaspagamento.php" class="btn btn-warning">Clique</a>
                 </p>
 
             
