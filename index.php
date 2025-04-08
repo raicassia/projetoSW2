@@ -84,10 +84,13 @@
                 </p>
 
                 <div class="col-sm-6">
-                <h1 class="bg-primary">formas pagamentos</h1>
+                <h1 class="bg-primary">Formas Pagamentos</h1>
                 <p class="text-secondary">
-                    Ultilize esta opço para realizar as formas de pagamentos 
+                    Ultilize esta opço para realizar as formas de pagamentos.
                     
+                </p>
+                <p>
+                    <a href="formaspagmento.php" class="btn btn-warning">Clique</a>
                 </p>
 
             
