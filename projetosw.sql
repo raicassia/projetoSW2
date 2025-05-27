@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Abr-2025 às 13:51
+-- Tempo de geração: 27-Maio-2025 às 11:47
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 --
 
 INSERT INTO `administrador` (`codigo`, `nome`, `login`, `senha`) VALUES
-(1, 'ana', '', 'd41d8cd98f00b204e9800998ecf8427e'),
+(1, 'Rai', 'Raiane', 'e10adc3949ba59abbe56e057f20f883e'),
 (2, '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
 (3, 'aaa', 'aa', '4124bc0a9335c27f086f24ba207a4912'),
 (4, '', '', 'd41d8cd98f00b204e9800998ecf8427e');

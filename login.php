@@ -43,7 +43,7 @@
 
                         session_start();
                         
-                        if (isset($$_SESSION["erro"]))
+                        if (isset($_SESSION["erro"]))
                         {
                             echo $_SESSION["erro"];
                         }
