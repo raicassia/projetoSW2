@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+
+    if ( !isset($_SESSION["nome"]))
+    {
+        header("location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +37,7 @@
                         include "conexao.php";
                         $sql = "select * from administrador";
                         $result = conexao->prepare($sql);
-                        $result-.execute();
+                        $result->execute();
 
                         while ($linha = $result->fetch(PDO::FETCH_ASSOC) )
                         {

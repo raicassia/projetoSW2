@@ -1,4 +1,13 @@
 <?php
+
+    session_start();
+
+    if ( !isset($_SESSION["nome"]))
+    {
+        header("location: login.php");
+    }
+?>
+<?php
 // Incluindo o arquivo de conexão com o banco de dados
 include "conexao.php"; // Verifique se o arquivo 'conexao.php' está configurado corretamente
 
