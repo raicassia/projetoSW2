@@ -1,57 +1,58 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-primary text-white p-3 text-center">
+    </div>
 
-    session_start();
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mx-auto mt-3 border border-primary">
 
-    if ( !isset($_SESSION["nome"]))
-    {
-        header("location: login.php");
-    }
-?>
-<?php
-// Incluindo o arquivo de conexão com o banco de dados
-include "conexao.php"; // Verifique se o arquivo 'conexao.php' está configurado corretamente
+                <h3 class="text-center p-3">Confirmação do Cadastro</h3>
 
-// Verificando se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                <div>
+                    <?php
+                    include "conexao.php";
+                    $descricao = $_REQUEST["descricao"];
+                    $precocusto = $_REQUEST["precocusto"];
+                    $precovenda = $_REQUEST["precovenda"];
+                    $codcategoria = $_REQUEST["codcategoria"];
+                    $codfornecedor = $_REQUEST["codfornecedor"];
 
-    // Coletando os dados do formulário
-    $descricao = $_POST["descricao"];
-    $preco = $_POST["preco"];
-    $categoria = $_POST["categoria"];
-    $fornecedor = $_POST["fornecedor"];
+                    echo "Nome do Produto: $descricao <br>
+                    
+                            Preço de Custo: $precocusto <br>
+                            Preço de Venda: $precovenda <br>
+                            Categora: $codcategoria <br>
+                            Fornecedor: $codfornecedor <br>";
 
-    // Validando se os campos não estão vazios (recomendado)
-    if (empty($descricao) || empty($preco) || empty($categoria) || empty($fornecedor)) {
-        echo "Todos os campos são obrigatórios!";
-        exit;
-    }
+                            $sql = "insert into produto(descricao, precocusto, precovenda, codcategoria, codfornecedor)
+                            values (:descricao, :precocusto, :precovenda, :codcategoria, :codfornecedor)";
+                    
 
-    // Exibindo os dados para conferência (opcional)
-    echo "Descrição: $descricao <br>";
-    echo "Preço: $preco <br>";
-    echo "Categoria: $categoria <br>";
-    echo "Fornecedor: $fornecedor <br>";
+                    
+                    $result = $conexao->prepare($sql); 
+                    $result->bindValue(":descricao", $descricao);
+                    $result->bindValue(":precocusto", $precocusto);
+                    $result->bindValue(":precovenda", $precovenda);
+                    $result->bindValue(":codcategoria", $codcategoria);
+                    $result->bindValue(":codfornecedor", $codfornecedor);
+                    $result->execute();
 
-    // Preparando a consulta SQL para inserir os dados na tabela 'produto'
-    $sql = "INSERT INTO produto (descricao, preco, categoria, fornecedor)
-            VALUES (:descricao, :preco, :categoria, :fornecedor)";
+                    echo "<p>O produto for cadastrado com Sucesso! </p>";
 
-    // Preparando a execução da query
-    $stmt = $conexao->prepare($sql);
+                    ?>
+            </div>
+        </div>
+    </div>
 
-    // Vinculando os valores aos parâmetros da consulta SQL
-    $stmt->bindValue(':descricao', $descricao);
-    $stmt->bindValue(':preco', $preco);
-    $stmt->bindValue(':categoria', $categoria);
-    $stmt->bindValue(':fornecedor', $fornecedor);
-
-    // Executando a consulta e verificando se o produto foi cadastrado com sucesso
-    if ($stmt->execute()) {
-        echo "<p>O produto foi cadastrado com sucesso!</p>";
-    } else {
-        echo "<p>Erro ao cadastrar o produto. Tente novamente.</p>";
-    }
-}
-
-?>
+</body>
+</html>
 
